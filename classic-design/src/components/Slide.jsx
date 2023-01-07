@@ -12,9 +12,9 @@ function Slide() {
       //     backgroundRepeat: 'no-repeat'
       //   }
       // } 
-      className='h-screen  pr-400 pl-52 pt-10'>
+      className=' h-screen  pr-400 pl-52 pt-10'>
       {/* navbar section */}
-      <div className='flex flex-row  gap-40 '>
+      <div className=' flex flex-row gap-40 '>
         <div className='flex flex-row w-1/4 gap-14'>
           <a className='text-red-400   text-lg w-45' href="shahilkv.com">Categories</a>
           <a className='text-red-400  text-lg w-45' href="shahilkv.com">Register</a>
@@ -32,7 +32,7 @@ function Slide() {
       {/* end of navbar */}
       <div>
         <div className=' w-full '>
-          <h1 className='font-semibold text-8xl mt-48 w-5/12 h-46 leading-snug'>The perfect Tool you need</h1>
+          <h1 className='font-semibold text-8xl mt-56 w-5/12 h-46 leading-snug'>The perfect Tool you need</h1>
         </div>
         <p className='opacity-75 pl-2 mt-10 mb-20'>Simple Easy and comfortable</p>
         <div>

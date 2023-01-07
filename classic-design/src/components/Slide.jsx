@@ -12,12 +12,7 @@ function Slide() {
       //     backgroundRepeat: 'no-repeat'
       //   }
       // } 
-      style={
-        {
-          height: '94vh',
-        }
-      }
-      className='  pr-400 pl-52 pt-10'>
+      className='h-screen  pr-400 pl-52 pt-10'>
       {/* navbar section */}
       <div className='flex flex-row  gap-40 '>
         <div className='flex flex-row w-1/4 gap-14'>

@@ -6,29 +6,31 @@ import Register from "./pages/Register";
 import Cart from './pages/Cart';
 
 import {
-  BrowserRouter, Link, Route, Routes
+  BrowserRouter, Route, Routes,
 } from "react-router-dom"
 
 const App = () => {
+  // const user = true;
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" exact element={<Home />} />
       </Routes>
       <Routes>
-        <Route path="/product" element={<ProductList />} />
+        <Route path="/products/:category" element={<ProductList />} />
+      </Routes>
+      <Routes>
+        <Route path="/product/:id" element={<Product />} />
+      </Routes>
+      <Routes>
+        {/* if({!user})  return <Navigate to='/' /> : */}
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Routes>
         <Route path="/login" element={<Login />} />
       </Routes>
       <Routes>
         <Route path="/register" element={<Register />} />
-      </Routes>
-      <Routes>
-        <Route path="/products" element={<Product />} />
-      </Routes>
-      <Routes>
-        <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   )

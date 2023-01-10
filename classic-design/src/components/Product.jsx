@@ -2,7 +2,7 @@
 import styled from "styled-components";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import { HeartBroken, SearchOutlined } from "@mui/icons-material";
-
+import { Link } from 'react-router-dom'
 
 const Info = styled.div`
  opacity: 0;
@@ -19,15 +19,15 @@ const Info = styled.div`
   transition: all 0.5s ease;
   cursor: pointer;
 `;
-const Title=styled.h3`
+const Title = styled.h3`
  margin-top: 10px;
  width: 200px;
 `
-const Price=styled.h5`
+const Price = styled.h5`
 width: 200px;
  margin-bottom: 70px;
 `
-const Scontainer=styled.div`
+const Scontainer = styled.div`
  position: relative;
 flex: 1;
    margin: 0px 50px 0px 0px;
@@ -42,7 +42,7 @@ flex: 1;
   }
   position: relative;
 `
-const Container=styled.div`
+const Container = styled.div`
   /* flex: 1;
    margin: 0px 50px 60px 0px;
   min-width: 350px;
@@ -89,31 +89,34 @@ const Icon = styled.div`
 //    border: none;
 //    left: 1000px;
 // `
-const Product=({item})=>{
+const Product = ({ item }) => {
   return (
-     <Container>
+    <Container>
       <Scontainer>
 
-       <Circle />
-       <Image src={item.img} />
-       <Info>
-         <Icon>
-           <ShoppingCartRoundedIcon />
-         </Icon>
-  
-         <Icon>
-           <SearchOutlined />
-         </Icon>
+        <Circle />
+        <Image src={item.img} />
+        <Info>
+          <Icon>
+            <ShoppingCartRoundedIcon />
+          </Icon>
 
-         <Icon>
-           <HeartBroken />
-         </Icon>
-    </Info>
+          <Icon>
+            <Link to={`/product/${item._id}`}>
+
+              <SearchOutlined />
+            </Link>
+          </Icon>
+
+          <Icon>
+            <HeartBroken />
+          </Icon>
+        </Info>
       </Scontainer>
-       {/* <BtnBuy>Buy Now</BtnBuy> */}
-       <Title>{item.title}</Title>
-       <Price>{item.price}</Price>
-     </Container>
+      {/* <BtnBuy>Buy Now</BtnBuy> */}
+      <Title>{item.title}</Title>
+      <Price>{item.price}</Price>
+    </Container>
   )
 }
 export default Product

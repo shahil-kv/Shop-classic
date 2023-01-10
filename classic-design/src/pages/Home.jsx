@@ -4,21 +4,20 @@ import Products from '../components/Products'
 import ReviewN from '../components/ReviewN'
 import Categories from '../components/Categories'
 import Things from '../components/things'
-// import Reviews from '../components/Reviews'
+
 import Slide from '../components/Slide'
-const Home=()=> {
+const Home = () => {
   return (
     <div>
 
-    <Slide/>
-   <Categories/>
-   <Things/>
-    <Products/>
-    {/* <Reviews/> */}
-    <ReviewN/>
-    <Footer/>
+      <Slide />
+      <Categories />
+      <Things />
+      <Products />
+      <ReviewN />
+      <Footer />
     </div>
   )
-} 
+}
 
 export default Home

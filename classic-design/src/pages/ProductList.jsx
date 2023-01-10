@@ -37,20 +37,26 @@ const ProductList = () => {
    const location = useLocation()
    // then we are doing the split method to split them
    const cat = location.pathname.split("/")[2];
-   const [filter, setFilters] = useState({})
+   const [filters, setFilters] = useState({})
+   const [sort, setSort] = useState('newest')
+   // when we click on the button then the handleFilter will work and then there we will get the click event and the target adn the value
    const handleFilters = (e) => {
-      console.log(`shahil  ${e}`)
       const value = e.target.value
+      const target = e.target.name;
+      // first we recieve the value 
+      // then we recieve the name of the target the changed 
+      console.log(value);
       setFilters({
-         ...filter,
-         [e.target.name]: value,
+         // we will set the array of filters into the array of target and the value to the filter array
+         ...filters,
+         [target]: value,
       });
    };
-   console.log(filter)
+
    return (
       <Container>
          <Navbar />
-         <Title>Dresses</Title>
+         <Title>{cat}</Title>
          <FilterContainer>
             <Filter>
                <FilterText>Filter Products :</FilterText>
@@ -74,14 +80,15 @@ const ProductList = () => {
             </Filter>
             <Filter>
                <FilterText>Sort Products</FilterText>
-               <Select>
-                  <Option selected >Newest</Option>
-                  <Option> Price(asc)</Option>
-                  <Option> Price(desc)</Option>
+               <Select onChange={e => setSort(e.target.value)} >
+                  <Option value={'newest'}>Newest</Option>
+                  <Option value={'asc'}> Price(asc)</Option>
+                  <Option value={'desc'}> Price(desc)</Option>
                </Select>
             </Filter>
          </FilterContainer>
-         <Products />
+         {/* we imported the cat the user clicked and the filter the user used and the sort to the product section so we can change there */}
+         <Products cat={cat} filters={filters} sort={sort} />
          <Footer />
       </Container>
    )

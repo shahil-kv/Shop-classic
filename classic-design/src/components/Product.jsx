@@ -90,12 +90,13 @@ const Icon = styled.div`
 //    left: 1000px;
 // `
 const Product = ({ item }) => {
+  console.log(item)
   return (
     <Container>
       <Scontainer>
 
         <Circle />
-        <Image src={item.img} />
+        <Image src={"item.img"} />
         <Info>
           <Icon>
             <ShoppingCartRoundedIcon />

@@ -1,7 +1,9 @@
-import { Search } from "@mui/icons-material";
+import { Search, ShoppingCartOutlined } from "@mui/icons-material";
+import { Badge } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
-
+import { useSelector } from "react-redux";
+import { Link } from 'react-router-dom'
 // this is the styling of the navbar
 // styled components  is used in it
 
@@ -61,6 +63,8 @@ const Anger = styled.a`
 `;
 const style = { position: "absolute", marginLeft: "5px" };
 function Navbar() {
+  const quantity = useSelector(state => state.cart.quantity)
+  // console.log(quantity)
   return (
     <Container>
       <First>
@@ -76,7 +80,13 @@ function Navbar() {
       <Third>
         <Input type="text" placeholder="Search" />
         <Search style={style} />
-        <Button>Cart </Button>
+        <Link to="/cart">
+          <Button>
+            <Badge badgeContent={quantity} color="primary">
+              <ShoppingCartOutlined />
+            </Badge>
+          </Button>
+        </Link>
       </Third>
     </Container>
   );

@@ -6,6 +6,8 @@ import Navbar from '../components/Navbar'
 import { useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import { publicRequest } from '../requestMethod'
+import { addProduct } from '../redux/cartRedux'
+import { useDispatch } from 'react-redux'
 
 const Container = styled.div`
     
@@ -121,6 +123,7 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1)
   const [color, setColor] = useState("");
   const [size, setSize] = useState("")
+  const dispatch = useDispatch()
 
   useEffect(() => {
     const getProduct = async () => {
@@ -144,6 +147,12 @@ const Product = () => {
     } else {
       setQuantity(quantity + 1)
     }
+  }
+
+  const handleClick = () => {
+    dispatch(
+      addProduct({ ...product, quantity, color, size })
+    )
   }
 
 
@@ -183,7 +192,7 @@ const Product = () => {
               <Amount>{quantity}</Amount>
               <button onClick={() => handleQuantity('incr')}> <Add /> </button>
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            <Button onClick={handleClick} >ADD TO CART</Button>
           </AddContainer>
           <AboutSection>
             <AboutTitle>About <Hr></Hr> </AboutTitle>

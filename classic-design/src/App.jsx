@@ -4,6 +4,7 @@ import Product from "./pages/Product";
 import ProductList from "./pages/ProductList";
 import Register from "./pages/Register";
 import Cart from './pages/Cart';
+import Pay from './pages/pay';
 
 import {
   BrowserRouter, Route, Routes,
@@ -31,6 +32,12 @@ const App = () => {
       </Routes>
       <Routes>
         <Route path="/register" element={<Register />} />
+      </Routes>
+      <Routes>
+        <Route path="/pay" element={<Pay />} />
+      </Routes>
+      <Routes>
+        <Route path="/success" element={<Register />} />
       </Routes>
     </BrowserRouter>
   )

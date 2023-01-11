@@ -1,7 +1,12 @@
+import { ShoppingCartOutlined } from '@mui/icons-material';
+import { Badge } from '@mui/material';
 import React from 'react';
+import { useSelector } from "react-redux";
+import { Link } from 'react-router-dom'
 // import background from './Files/backgroundpic.jpg'
 
 function Slide() {
+  const quantity = useSelector(state => state.cart.quantity)
   return (
     <section
       // style={
@@ -26,7 +31,13 @@ function Slide() {
         <div>
           {/* <Search className='p-20'/>  */}
           <input placeholder='Search here' className='rounded-lg border-black text-xl border-2 pl-4 p-2 w-64 ml-20 mr-5' type="text" />
-          <button className='border-black bg-black text-white px-9 py-3 rounded-lg'>Cart</button>
+          <Link to="/cart">
+            <button className='border-black bg-black text-white px-9 py-3 rounded-lg'>
+              <Badge badgeContent={quantity} color="primary">
+                <ShoppingCartOutlined />
+              </Badge>
+            </button>
+          </Link>
         </div>
       </div>
       {/* end of navbar */}

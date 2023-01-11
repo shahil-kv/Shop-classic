@@ -112,12 +112,13 @@ const Namediv = styled.div`
 
 `
 
-const Title = styled.h2`
+const Title = styled.h1`
      display: flex;
      flex-direction: row;
      justify-content: center;
      margin-top: 130px;
      margin-bottom: 70px;
+     font-size:34px;
 `
 const ReviewN = () => {
   return (

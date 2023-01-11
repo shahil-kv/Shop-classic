@@ -1,121 +1,54 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Container = styled.div`
-  margin-top: 50px;
-    display: flex;
- background-color: #f4ebee;
- height: 520px;
- width: 100%;
- flex-direction: row;
- flex-wrap: wrap;
- justify-content: space-between;
-  /* gap:40px; */
- padding: 70px 180px 0px 180px;
-`
-
-const FirstDiv = styled.div`
-     width: 250px;
-     margin-right: 100px;
-`
-const SecondDiv = styled.div`
-    width: 170px;
-`
-const ThirdDiv = styled.div`
-    width: 220px;
-`
-
-const FourthDiv = styled.div`
-    width: 230px;
-`
-const FifthDiv = styled.div`
-    width: 310px;
-`
-const Logo = styled.h3`
-     font-weight: 400;
-`
-const Para = styled.p`
-    font-size: 20px;
-    font-weight: 400;
-`
-const Anger = styled.a` 
-    cursor: pointer;
-    text-decoration: none;
-    color: #00000098;
-    font-size: 16px;
-    font-weight: 400;
-`
 const Input = styled.input`
      padding:10px  20px;
      width: 280px;
 `
-const FlexDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-     height: 230px;
-    justify-content: space-between;
 
-`
-// const Btn=styled.button`
-//     background-image: url();
-// `
-const Logos = styled.h3`
-   font-weight: 400;
-    margin-bottom: 20px;
-`
-const LogoL = styled.h3`
-    margin-bottom: 30px;
-    font-size: 40px;
-`
-const Copy = styled.p`
-     margin-top: 170px;
-    font-weight: 100;
-    font-size: 17px;
-    color: #00000063;
-`
+
 const Footer = () => {
     return (
-        <Container>
-            <FirstDiv>
-                <LogoL>CLASSIC<span style={{ color: '#ec3b3b' }}>.</span></LogoL>
-                <Para>Collaboration platform for modern items</Para>
-                <Copy>© Copyright Classic 2022 Inc. </Copy>
-            </FirstDiv>
-            <SecondDiv>
-                <FlexDiv>
-                    <Logo>COMPANY</Logo>
-                    <Anger>About Us</Anger>
-                    <Anger>Careers</Anger>
-                    <Anger>Contact Us</Anger>
-                </FlexDiv>
-            </SecondDiv>
-            <ThirdDiv>
-                <FlexDiv>
-                    <Logos>FEATURES</Logos>
-                    <Anger>Screen sharing</Anger>
-                    <Anger>IOS & Android Aps</Anger>
-                    <Anger>File Sharing</Anger>
-                    <Anger>User Management</Anger>
-                </FlexDiv>
-            </ThirdDiv>
-            <FourthDiv>
-                <FlexDiv>
-                    <Logo>CONTACT US</Logo>
-                    <Anger href='shahilkv.com'>shahilkv@gmail.como</Anger>
-                    <Anger>+91 9846786928</Anger>
-                    <Anger>Arakkinar Balan Road</Anger>
-                </FlexDiv>
-            </FourthDiv>
-            <FifthDiv>
-                <FlexDiv>
-                    <Logo>STAY UP TO DATE</Logo>
-                    <Anger>Subscribe to our news Letter</Anger>
+        <div className='flex mt-12 bg-red-300 h-1/3 w-full flex-row flex-wrap justify-between gap-10 px-48 pt-20 pb-12 '>
+            <div className='w-64 mr-24'>
+                <h3 className='mb-8 text-4xl'>CLASSIC<span style={{ color: '#ec3b3b' }}>.</span></h3>
+                <p className='text-xl font-medium'>Collaboration platform for modern items</p>
+                <p className='mt-44 font-light text-sm' >© Copyright Classic 2022 Inc. </p>
+            </div>
+            <div className='w-44'>
+                <div className='flex flex-col h-56 justify-between'>
+                    <h3 className='font-normal text-xl'>COMPANY</h3>
+                    <a className='cursor-pointer  text-sm font-medium text-black opacity-60' href="s">About us</a>
+                    <a className='cursor-pointer  text-sm font-medium text-black opacity-60' href="s">Contact Us</a>
+                    <a className='cursor-pointer  text-sm font-medium text-black opacity-60' href="s">Careers</a>
+                </div>
+            </div>
+            <div className='w-56'>
+                <div className='flex flex-col h-56 justify-between'>
+                    <h3 className='font-medium mb-5 text-xl'>FEATURES</h3>
+                    <a className='cursor-pointer  text-sm font-medium  text-black opacity-60' href="s">Screen sharing</a>
+                    <a className='cursor-pointer  text-sm font-medium  text-black opacity-60' href="s">IOS & Android</a>
+                    <a className='cursor-pointer  text-sm font-medium  text-black opacity-60' href="s">File Sharing</a>
+                    <a className='cursor-pointer  text-sm font-medium  text-black opacity-60' href="s">User Management</a>
+                </div>
+            </div>
+            <div className='w-60'>
+                <div className='flex flex-col h-56 justify-between'>
+                    <h3 className='font-normal text-xl' >CONTACT US</h3>
+                    <a className='cursor-pointer  text-sm font-medium text-black opacity-60' href="s">shahilkv@gmail.com</a>
+                    <a className='cursor-pointer  text-sm font-medium text-black opacity-60' href="s">+91 9846786928</a>
+                    <a className='cursor-pointer  text-sm font-medium text-black opacity-60' href="s">Arakkinar Balan Road</a>
+                </div >
+            </div >
+            <div className='w-80'>
+                <div className='flex flex-col h-56 justify-between'>
+                    <h3 className='font-normal text-xl' >STAY UP TO DATE</h3>
+                    <a className='cursor-pointer  text-sm font-medium text-black opacity-60' href="s">Subscribe to our news Letter</a>
                     <Input placeholder='Email'></Input>
-                    {/* <Btn></Btn> */}
-                </FlexDiv>
-            </FifthDiv>
+                </div>
+            </div >
 
-        </Container>
+        </div >
     )
 }
 

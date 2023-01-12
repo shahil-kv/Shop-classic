@@ -4,20 +4,9 @@ import styled from 'styled-components'
 import Footer from '../components/Footer'
 import { Add, Remove } from '@mui/icons-material'
 import { useSelector } from 'react-redux'
-const Container = styled.div`
-    
- `
 
-const Wrapper = styled.div`
-    padding: 20px;
- `
 
-const Title = styled.div`
-    font-weight: 200;
-    font-size: 40px;
-    text-align: center;
-    
- `
+
 const Top = styled.div`
     display: flex;
     justify-content: space-between;
@@ -139,13 +128,18 @@ const Summary = styled.div`
 const Flex = styled.div`
    display: flex;
 `
+const Title = styled.div`
+    font-weight: 200;
+    font-size: 40px;
+    text-align: center;
+    
+ `
 const Cart = () => {
    const cart = useSelector(state => state.cart)
    return (
-      <Container>
-         {/* <Navbar/> */}
-         <Wrapper>
-            <Title>YOUR BAG</Title>
+      <div>
+         <div className='p-20'>
+            <div className='font-medium text-4xl text-center'>YOUR BAG</div>
             <Top>
                <TopButton type='filled'>CONTINUE SHOPPING</TopButton>
                <TopTexts>
@@ -202,9 +196,9 @@ const Cart = () => {
                   <Button>CHECKOUT NOW</Button>
                </Summary>
             </Bottom>
-         </Wrapper>
+         </div>
          <Footer />
-      </Container>
+      </div>
    )
 }
 

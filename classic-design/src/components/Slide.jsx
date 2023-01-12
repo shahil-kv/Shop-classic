@@ -11,13 +11,14 @@ function Slide() {
     <section
       // style={
       //   {
-      //     backgroundImage: `url(${background})`,
+      //     backgroundImage: `url({{window.location.origin +/"Files/backgroundpic.jpg"}})`,
       //     backgroundPosition: 'center',
       //     backgroundSize: 'cover',
       //     backgroundRepeat: 'no-repeat'
       //   }
-      // } 
-      className=' h-screen  pr-400 pl-52 pt-10'>
+      // }
+      className=' h-screen  pr-400 pl-52 pt-10 '>
+      {/* <img src={window.location.origin + '/Files/backgroundpic.jpg'} alt="" /> */}
       {/* navbar section */}
       <div className=' flex flex-row gap-40 '>
         <div className='flex flex-row w-1/4 gap-14'>
@@ -28,6 +29,7 @@ function Slide() {
         <div>
           <h1 className='w-56 font-semibold text-5xl'>CLASSIC<span style={{ color: "red" }}>.</span></h1>
         </div>
+
         <div>
           {/* <Search className='p-20'/>  */}
           <input placeholder='Search here' className='rounded-lg border-black text-xl border-2 pl-4 p-2 w-64 ml-20 mr-5' type="text" />

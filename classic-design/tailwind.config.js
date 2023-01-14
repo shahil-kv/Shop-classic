@@ -5,16 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      animation: {
-        shahil: '2s linear '
-      },
-      keyframes: {
-        shahil: {
-          '0%,100': { scale: '1.1' },
-        }
-      }
-    }
-  }
+
+    },
+  },
+  plugins: [],
+
 }
-// plugins: [],
 

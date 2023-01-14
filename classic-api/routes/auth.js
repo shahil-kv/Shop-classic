@@ -5,7 +5,7 @@ const User = require('../models/User')
 const crypto = require('crypto')
 const algorithm = 'aes256'; // or any other algorithm supported by OpenSSL
 const key = 'password';
-const jwt=require('jsonwebtoken')
+const jwt = require('jsonwebtoken')
 // register user
 
 // const CryptoJs=require('crypto-js')
@@ -28,7 +28,7 @@ router.post('/register', async (req, res) => {
         const savedUser = await newUser.save()
         const { id, username, password } = savedUser
         res.status(201).json(id)
-     console.log('user has been created')
+        console.log('user has been created')
     } catch (e) {
         res.status(500).json(e)
     }
@@ -43,19 +43,20 @@ router.post('/login', async (req, res) => {
         !savedUser && res.status(401).send('User not found in database')
         const decipher = crypto.createDecipher(algorithm, key);
         const decrypted = decipher.update(savedUser.password, 'hex', 'utf8') + decipher.final('utf8');
-   
-        const {password,...others}=savedUser._doc
-        if(decrypted !== req.body.password)return res.status(401).json('Wrong credentials')
-            const accessToken=jwt.sign({
-           id:savedUser.id,
-           isAdmin:savedUser.isAdmin
-            },
+
+        const { password, ...others } = savedUser._doc
+        if (decrypted !== req.body.password) return res.status(401).json('Wrong credentials')
+        const accessToken = jwt.sign({
+            id: savedUser.id,
+            isAdmin: savedUser.isAdmin
+        },
             process.env.JWT_SEC,
-            {expiresIn:'3d'}
-            );
-        res.status(200).json({...others,accessToken})
-    }catch(err) {
-       res.status(500).json(err)
+            { expiresIn: '3d' }
+        );
+        res.status(200).json({ ...others, accessToken })
+    } catch (err) {
+
+        res.status(500).json(err)
     }
 })
 

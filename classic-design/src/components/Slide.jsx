@@ -8,18 +8,7 @@ import { Link } from 'react-router-dom'
 function Slide() {
   const quantity = useSelector(state => state.cart.quantity)
   return (
-    <section
-      // style={
-      //   {
-      //     backgroundImage: `url({{window.location.origin +/"Files/backgroundpic.jpg"}})`,
-      //     backgroundPosition: 'center',
-      //     backgroundSize: 'cover',
-      //     backgroundRepeat: 'no-repeat'
-      //   }
-      // }
-      className=' h-screen  pr-400 pl-52 pt-10 '>
-      {/* <img src={window.location.origin + '/Files/backgroundpic.jpg'} alt="" /> */}
-      {/* navbar section */}
+    <section className="bg-[url('/public/Files/backgroundpic.jpg')] h-screen  pr-400 pl-52 pt-10 mb-44">
       <div className=' flex flex-row gap-40 '>
         <div className='flex flex-row w-1/4 gap-14'>
           <a className='text-red-400   text-lg w-45' href="shahilkv.com">Categories</a>
@@ -28,7 +17,7 @@ function Slide() {
         </div>
         <div>
           <h1 className='w-56 font-semibold text-5xl'>CLASSIC<span style={{ color: "red" }}>.</span></h1>
-        </div>
+          88      </div>
 
         <div>
           {/* <Search className='p-20'/>  */}

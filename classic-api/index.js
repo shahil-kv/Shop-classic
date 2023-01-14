@@ -28,7 +28,7 @@ app.use('/api/auth', authRoute);
 app.use('/api/products', productRoute)
 app.use('/api/cart', cartRoute)
 app.use('/api/orders', orderRoute)
-app.use('api/checkout', stripeRoute)
+app.use('/api/checkout', stripeRoute)
 app.listen(5000, () => {
   console.log("Backend server is running on port 5000");
 });

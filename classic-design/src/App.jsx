@@ -9,6 +9,7 @@ import Pay from './pages/pay';
 import {
   BrowserRouter, Route, Routes,
 } from "react-router-dom"
+import Sucess from "./pages/Success";
 
 const App = () => {
   // const user = true;
@@ -37,7 +38,7 @@ const App = () => {
         <Route path="/pay" element={<Pay />} />
       </Routes>
       <Routes>
-        <Route path="/success" element={<Register />} />
+        <Route path="/success" element={<Sucess />} />
       </Routes>
     </BrowserRouter>
   )

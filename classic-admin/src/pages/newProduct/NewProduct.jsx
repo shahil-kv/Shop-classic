@@ -30,16 +30,6 @@ export default function NewProduct() {
     const storageRef = ref(storage, fileName);
     const uploadTask = uploadBytesResumable(storageRef, file);
 
-
-    // Pause the upload
-    uploadTask.pause();
-
-    // Resume the upload
-    uploadTask.resume();
-
-    // Cancel the upload
-    uploadTask.cancel();
-
     getDownloadURL(uploadTask.snapshot.ref).then((getDownloadURL) => {
       console.log({ ...inputs, img: getDownloadURL, categories: cat })
       console.log(`This is downloaded url${getDownloadURL}`)
